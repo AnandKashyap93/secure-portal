@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Slate/Emerald Enterprise Theme */
+    --background: 215 25% 11%;
+    --foreground: 210 20% 92%;
+
+    --card: 215 20% 14%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 215 20% 14%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Emerald primary - professional, trustworthy */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Slate secondary */
+    --secondary: 215 20% 25%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 215 18% 20%;
+    --muted-foreground: 215 10% 55%;
+
+    --accent: 215 18% 20%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --border: 215 20% 22%;
+    --border2: 215 20% 26%;
+    --input: 215 20% 18%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.5rem;
+
+    --surface: 215 20% 14%;
+    --surface2: 215 18% 18%;
+
+    --sidebar-background: 215 25% 10%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 18% 18%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 215 20% 18%;
+    --sidebar-ring: 160 84% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-display {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image: linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .gradient-glow {
+    background: radial-gradient(ellipse 80% 50% at 50% -5%, hsl(160 84% 39% / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 90% 90%, hsl(215 20% 25% / 0.3) 0%, transparent 50%);
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease both;
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
